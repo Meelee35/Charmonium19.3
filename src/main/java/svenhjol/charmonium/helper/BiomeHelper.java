@@ -21,6 +21,6 @@ public class BiomeHelper {
     @Nullable
     public static ResourceKey<Biome> getBiomeKey(Level level, BlockPos pos) {
         var biome = getBiome(level, pos);
-        return level.registryAccess().registryOrThrow(Registry.BIOME_REGISTRY).getResourceKey(biome).orElse(null);
+        return level.registryAccess().registryOrThrow(Registries.BIOME_REGISTRY).getResourceKey(biome).orElse(null);
     }
 }
