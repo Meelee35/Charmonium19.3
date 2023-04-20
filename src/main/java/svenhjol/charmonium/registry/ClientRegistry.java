@@ -1,6 +1,7 @@
 package svenhjol.charmonium.registry;
 
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import svenhjol.charmonium.Charmonium;
@@ -13,6 +14,6 @@ public class ClientRegistry {
     public static SoundEvent sound(String id) {
         ResourceLocation res = new ResourceLocation(Charmonium.MOD_ID, id);
         LogHelper.debug(ClientRegistry.class, "Registering sound `" + res + "`");
-        return Registry.register(Registries.SOUND_EVENT, res, new SoundEvent(res));
+        return Registry.register(BuiltInRegistries.SOUND_EVENT, res, SoundEvent.createVariableRangeEvent(res));
     }
 }

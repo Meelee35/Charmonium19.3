@@ -3,6 +3,7 @@ package svenhjol.charmonium.helper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
@@ -21,6 +22,6 @@ public class BiomeHelper {
     @Nullable
     public static ResourceKey<Biome> getBiomeKey(Level level, BlockPos pos) {
         var biome = getBiome(level, pos);
-        return level.registryAccess().registryOrThrow(Registries.BIOME_REGISTRY).getResourceKey(biome).orElse(null);
+        return level.registryAccess().registryOrThrow(Registries.BIOME).getResourceKey(biome).orElse(null);
     }
 }
